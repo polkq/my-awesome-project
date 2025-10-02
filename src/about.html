@@ -6,41 +6,78 @@
  <title>О нас - Название вашего сайта</title>
  <meta name="description" content="Узнайте больше о нашей компании и истории">
  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+ <link rel="stylesheet" href="styles.css">
 </head>
 <body>
  <!-- Шапка сайта -->
- <header>
- <a href="/">Логотип или название сайта</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
+ <header class="site-header">
+  <div class="container">
+   <div class="site-header__content">
+    <a href="/" class="site-header__brand">Логотип или название сайта</a>
+    <!-- Главное меню навигации -->
+    <nav class="site-nav" aria-label="Основная навигация">
+     <ul class="site-nav__list">
+      <li class="site-nav__item"><a href="index.html" class="site-nav__link">Главная</a></li>
+      <li class="site-nav__item"><a href="about.html" class="site-nav__link site-nav__link--active">О нас</a></li>
+      <li class="site-nav__item"><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+     </ul>
+    </nav>
+   </div>
+  </div>
  </header>
+
  <!-- Уникальное основное содержимое страницы -->
- <main>
- <!-- Простые "хлебные крошки" -->
- <nav aria-label="Хлебные крошки">
- <a href="index.html">Главная</a> →
- <span>О нас</span>
- </nav>
- <h1>О нашей компании</h1>
- <section>
- <h2>Наша история</h2>
- <p>Текст о том, как все начиналось...</p>
- </section>
- <section>
- <h2>Наша команда</h2>
- <p>Текст о команде...</p>
- </section>
+ <main class="main">
+  <div class="main__container">
+   <!-- Простые "хлебные крошки" -->
+   <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ul class="breadcrumbs__list">
+     <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Главная</a></li>
+     <li class="breadcrumbs__item"><span class="breadcrumbs__separator">→</span></li>
+     <li class="breadcrumbs__item"><span class="breadcrumbs__current">О нас</span></li>
+    </ul>
+   </nav>
+
+   <h1 class="section__title">О нашей компании</h1>
+   
+   <section class="section">
+    <h2 class="section__subtitle">Наша история</h2>
+    <p class="section__text">Наша компания была основана в 2020 году с целью создания инновационных решений для современного бизнеса. За годы работы мы накопили богатый опыт и помогли сотням клиентов достичь их целей.</p>
+    <p class="section__text">Мы начинаем с малого, но всегда думаем масштабно. Каждый проект для нас — это возможность создать что-то уникальное и полезное.</p>
+   </section>
+
+   <section class="section">
+    <h2 class="section__subtitle">Наша команда</h2>
+    <p class="section__text">В нашей команде работают высококвалифицированные специалисты с многолетним опытом в области веб-разработки, дизайна и маркетинга.</p>
+    
+    <!-- Карточки команды -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+     <article class="card">
+      <img src="https://i.pinimg.com/originals/cc/d1/57/ccd15711367bc925867b13a2afd0db74.jpg" alt="Руководитель проекта" class="card__img" width="250" height="200" loading="lazy">
+      <div class="card__content">
+       <h3 class="card__title">Анна Иванова</h3>
+       <p class="card__text">Руководитель проектов, 8 лет опыта в веб-разработке</p>
+      </div>
+     </article>
+     
+     <article class="card">
+      <img src="https://i.pinimg.com/originals/cc/d1/57/ccd15711367bc925867b13a2afd0db74.jpg" alt="Frontend разработчик" class="card__img" width="250" height="200" loading="lazy">
+      <div class="card__content">
+       <h3 class="card__title">Михаил Петров</h3>
+       <p class="card__text">Frontend разработчик, специалист по React и Vue.js</p>
+      </div>
+     </article>
+    </div>
+   </section>
+  </div>
  </main>
+
  <!-- Подвал сайта -->
- <footer>
- <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
+ <footer class="site-footer">
+  <div class="container">
+   <p class="site-footer__text">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+   <p class="site-footer__text">Телефон: +7 (123) 456-78-90</p>
+  </div>
  </footer>
 </body>
 </html>

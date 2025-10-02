@@ -10,77 +10,146 @@
 </head>
 <body>
  <!-- Шапка сайта -->
- <header>
- <a href="/">Логотип или название сайта</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
+ <header class="site-header">
+  <div class="container">
+   <div class="site-header__content">
+    <a href="/" class="site-header__brand">Логотип или название сайта</a>
+    <!-- Главное меню навигации -->
+    <nav class="site-nav" aria-label="Основная навигация">
+     <ul class="site-nav__list">
+      <li class="site-nav__item"><a href="index.html" class="site-nav__link site-nav__link--active">Главная</a></li>
+      <li class="site-nav__item"><a href="about.html" class="site-nav__link">О нас</a></li>
+      <li class="site-nav__item"><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+     </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-pressed="false" title="Переключить тему">🌙</button>
+   </div>
+  </div>
  </header>
+
  <!-- Уникальное основное содержимое страницы -->
- <main>
- <h1>Добро пожаловать на наш сайт!</h1>
- <!-- Секция 1 с якорем -->
- <section id="services">
- <h2>Наши услуги</h2>
- <p>Описание предоставляемых услуг...</p>
- <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
- </section>
- <!-- Секция 2 с якорем -->
- <section id="portfolio">
- <h2>Портфолио</h2>
- <p>Примеры наших работ...</p>
- </section>
- <!-- Секция 3 с якорем -->
- <section id="contacts">
- <h2>Контактная информация</h2>
- <p>Наши контакты...</p>
- <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
- </section>
+ <main class="main">
+  <div class="main__container">
+   <!-- Герой-секция -->
+   <section class="hero">
+    <h1 class="hero__title">Добро пожаловать на наш сайт!</h1>
+    <p class="hero__subtitle">Мы создаем качественные решения для вашего бизнеса</p>
+   </section>
+
+   <!-- Секция 1 с якорем -->
+   <section id="services" class="section">
+    <h2 class="section__title">Наши услуги</h2>
+    <p class="section__text">Мы предоставляем широкий спектр услуг для развития вашего бизнеса. Наша команда профессионалов готова помочь вам достичь поставленных целей.</p>
+    <a href="#contacts" class="section__link">Связаться с нами</a>
+   </section>
+
+   <!-- Секция 2 с якорем -->
+   <section id="portfolio" class="section">
+    <h2 class="section__title">Портфолио</h2>
+    <p class="section__text">Ознакомьтесь с примерами наших работ и проектов, которые мы реализовали для наших клиентов.</p>
+    
+    <!-- Карточки портфолио -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+     <article class="card">
+      <img src="https://i.pinimg.com/originals/cc/d1/57/ccd15711367bc925867b13a2afd0db74.jpg" alt="Проект 1" class="card__img" width="300" height="200" loading="lazy">
+      <div class="card__content">
+       <h3 class="card__title">Веб-разработка</h3>
+       <p class="card__text">Создание современных веб-сайтов и приложений с использованием передовых технологий.</p>
+      </div>
+     </article>
+     
+     <article class="card">
+      <img src="https://i.pinimg.com/originals/cc/d1/57/ccd15711367bc925867b13a2afd0db74.jpg" alt="Проект 2" class="card__img" width="300" height="200" loading="lazy">
+      <div class="card__content">
+       <h3 class="card__title">Мобильные приложения</h3>
+       <p class="card__text">Разработка кроссплатформенных мобильных приложений для iOS и Android.</p>
+      </div>
+     </article>
+    </div>
+   </section>
+
+   <!-- Видео секция -->
+   <section class="section">
+    <h2 class="section__title">О нас в видео</h2>
+    <p class="section__text">Посмотрите короткое видео о нашей компании и подходах к работе.</p>
+    
+    <div class="media">
+     <iframe
+      src="https://vkvideo.ru/video_ext.php?oid=-145643494&id=456247448&hash=e862ceaa90ccb46e"
+      title="Видео о нашей компании"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen
+      loading="lazy">
+     </iframe>
+    </div>
+   </section>
+
+   <!-- Секция 3 с якорем -->
+   <section id="contacts" class="section">
+    <h2 class="section__title">Контактная информация</h2>
+    <p class="section__text">Свяжитесь с нами любым удобным способом. Мы всегда готовы ответить на ваши вопросы.</p>
+    <a href="contacts.html" class="section__link">Подробнее</a>
+   </section>
+  </div>
  </main>
+
  <!-- Подвал сайта -->
- <footer>
- <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
+ <footer class="site-footer">
+  <div class="container">
+   <p class="site-footer__text">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+   <p class="site-footer__text">Телефон: +7 (123) 456-78-90</p>
+  </div>
  </footer>
 
  <!-- Кнопка открытия модалки -->
- <button id="openDialog" type="button" class="open-modal-btn">Написать нам</button>
+ <button id="openDialog" type="button" class="btn btn--success" style="position: fixed; bottom: var(--space-4); right: var(--space-4); z-index: var(--z-fixed);">Написать нам</button>
 
  <!-- Модалка с формой -->
  <dialog id="contactDialog" aria-labelledby="dialogTitle">
-  <h2 id="dialogTitle">Обратная связь</h2>
-  <form id="contactForm" method="dialog" novalidate>
-   <label for="name">Имя</label>
-   <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+  <div class="modal__header">
+   <h2 id="dialogTitle" class="modal__title">Обратная связь</h2>
+   <button type="button" id="closeDialog" class="modal__close" aria-label="Закрыть модальное окно">&times;</button>
+  </div>
+  
+  <form id="contactForm" class="form" method="dialog" novalidate>
+   <div class="form__group">
+    <label for="name" class="form__label">Имя</label>
+    <input id="name" name="name" type="text" class="form__input" required minlength="2" autocomplete="given-name">
+   </div>
    
-   <label for="email">E-mail</label>
-   <input id="email" name="email" type="email" required autocomplete="email">
+   <div class="form__group">
+    <label for="email" class="form__label">E-mail</label>
+    <input id="email" name="email" type="email" class="form__input" required autocomplete="email">
+   </div>
    
-   <label for="phone">Телефон</label>
-   <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
-   <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+   <div class="form__group">
+    <label for="phone" class="form__label">Телефон</label>
+    <input id="phone" name="phone" type="tel" class="form__input" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+    <small id="phoneHelp" class="form__help">Формат: +7 (900) 000-00-00</small>
+   </div>
    
-   <label for="date">Дата</label>
-   <input id="date" name="date" type="date">
+   <div class="form__group">
+    <label for="date" class="form__label">Дата</label>
+    <input id="date" name="date" type="date" class="form__input">
+   </div>
    
-   <label for="topic">Тема</label>
-   <select id="topic" name="topic" required>
-    <option value="">Выберите тему</option>
-    <option>Вопрос</option>
-    <option>Заказ</option>
-   </select>
+   <div class="form__group">
+    <label for="topic" class="form__label">Тема</label>
+    <select id="topic" name="topic" class="form__select" required>
+     <option value="">Выберите тему</option>
+     <option>Вопрос</option>
+     <option>Заказ</option>
+    </select>
+   </div>
    
-   <label for="message">Сообщение</label>
-   <textarea id="message" name="message" rows="4" required></textarea>
+   <div class="form__group">
+    <label for="message" class="form__label">Сообщение</label>
+    <textarea id="message" name="message" rows="4" class="form__textarea" required></textarea>
+   </div>
    
-   <div class="form-actions">
-    <button type="button" id="closeDialog">Закрыть</button>
-    <button type="submit">Отправить</button>
+   <div class="form__actions">
+    <button type="button" id="closeDialog" class="btn btn--secondary">Закрыть</button>
+    <button type="submit" class="btn btn--primary">Отправить</button>
    </div>
   </form>
  </dialog>

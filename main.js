@@ -1,10 +1,30 @@
-// Управление модальным окном и валидация формы
+// Управление модальным окном, валидация формы и переключатель темы
 document.addEventListener('DOMContentLoaded', function() {
     const dlg = document.getElementById('contactDialog');
     const openBtn = document.getElementById('openDialog');
     const closeBtn = document.getElementById('closeDialog');
     const form = document.getElementById('contactForm');
+    const themeToggle = document.querySelector('.theme-toggle');
     let lastActive = null;
+
+    // Переключатель темы
+    const KEY = 'theme';
+    const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Автовыбор: системная тема или сохранённый выбор пользователя
+    if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) && prefersDark)) {
+        document.body.classList.add('theme-dark');
+        themeToggle?.setAttribute('aria-pressed', 'true');
+        themeToggle.textContent = '☀️';
+    }
+    
+    // Переключение по кнопке с сохранением в localStorage
+    themeToggle?.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('theme-dark');
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+        themeToggle.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+    });
 
     // Открытие модального окна
     openBtn?.addEventListener('click', () => {
